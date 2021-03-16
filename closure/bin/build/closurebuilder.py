@@ -201,7 +201,7 @@ def main():
 
   # Make our output pipe.
   if options.output_file:
-    out = io.open(options.output_file, 'wb')
+    out = io.open(options.output_file, 'w')
   else:
     out = sys.stdout
 
