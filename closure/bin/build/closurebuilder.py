@@ -201,14 +201,13 @@ def main():
 
   # Make our output pipe.
   if options.output_file:
-    out = io.open(options.output_file, 'wb')
-  else:
     version = sys.version_info[:2]
     if version >= (3, 0):
-      # Write bytes to stdout
-      out = sys.stdout.buffer
+      out = io.open(options.output_file, 'w')
     else:
-      out = sys.stdout
+      out = io.open(options.output_file, 'wb')
+  else:
+    out = sys.stdout
 
   sources = set()
 
